@@ -22,19 +22,5 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='Applied'"
-    )
-    public void wheneverApplied_StartLimit(@Payload Applied applied) {
-        Applied event = applied;
-        System.out.println(
-            "\n\n##### listener StartLimit : " + applied + "\n\n"
-        );
-
-        // Sample Logic //
-        Limit.startLimit(event);
-    }
 }
 //>>> Clean Arch / Inbound Adaptor

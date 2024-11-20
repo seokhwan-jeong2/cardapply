@@ -47,7 +47,7 @@ const pluralCaseList = []
 
 pluralCaseList.push( {plural: "applies/applies", pascal: "ApplyApply"} )
 
-pluralCaseList.push( {plural: "/", pascal: ""} )
+pluralCaseList.push( {plural: "sends/sends", pascal: "SendSend"} )
 
 pluralCaseList.push( {plural: "limits/limits", pascal: "LimitLimit"} )
 

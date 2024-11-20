@@ -8,8 +8,8 @@ Vue.use(Router);
 import ApplyApplyManager from "./components/listers/ApplyApplyCards"
 import ApplyApplyDetail from "./components/listers/ApplyApplyDetail"
 
-import Manager from "./components/listers/Cards"
-import Detail from "./components/listers/Detail"
+import SendSendManager from "./components/listers/SendSendCards"
+import SendSendDetail from "./components/listers/SendSendDetail"
 
 import LimitLimitManager from "./components/listers/LimitLimitCards"
 import LimitLimitDetail from "./components/listers/LimitLimitDetail"
@@ -34,14 +34,14 @@ export default new Router({
             },
 
             {
-                path: '//',
-                name: 'Manager',
-                component: Manager
+                path: '/sends/sends',
+                name: 'SendSendManager',
+                component: SendSendManager
             },
             {
-                path: '///:id',
-                name: 'Detail',
-                component: Detail
+                path: '/sends/sends/:id',
+                name: 'SendSendDetail',
+                component: SendSendDetail
             },
 
             {

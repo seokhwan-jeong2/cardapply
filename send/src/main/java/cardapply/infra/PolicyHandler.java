@@ -18,23 +18,9 @@ import org.springframework.stereotype.Service;
 public class PolicyHandler {
 
     @Autowired
-    Repository Repository;
+    SendRepository sendRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='Applied'"
-    )
-    public void wheneverApplied_StartSend(@Payload Applied applied) {
-        Applied event = applied;
-        System.out.println(
-            "\n\n##### listener StartSend : " + applied + "\n\n"
-        );
-
-        // Sample Logic //
-        Send.startSend(event);
-    }
 }
 //>>> Clean Arch / Inbound Adaptor

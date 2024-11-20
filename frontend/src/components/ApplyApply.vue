@@ -45,6 +45,13 @@
                 <v-btn
                     color="primary"
                     text
+                    @click="save"
+                >
+                    ApplyCancel
+                </v-btn>
+                <v-btn
+                    color="primary"
+                    text
                     @click="remove"
                     v-if="!editMode"
                 >

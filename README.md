@@ -39,7 +39,7 @@ mvn spring-boot:run
 ```
 - send
 ```
- http :8088/ 
+ http :8088/sends userid="userid" cardno="cardno" address="address" balsongilja="balsongilja" 
 ```
 - limit
 ```

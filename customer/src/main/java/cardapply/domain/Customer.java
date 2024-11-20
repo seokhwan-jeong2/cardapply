@@ -1,6 +1,7 @@
 package cardapply.domain;
 
 import cardapply.CustomerApplication;
+import cardapply.domain.CustomerManaged;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,12 @@ public class Customer {
     private Integer customergubun;
 
     private String address;
+
+    @PostPersist
+    public void onPostPersist() {
+        CustomerManaged customerManaged = new CustomerManaged(this);
+        customerManaged.publishAfterCommit();
+    }
 
     public static CustomerRepository repository() {
         CustomerRepository customerRepository = CustomerApplication.applicationContext.getBean(

@@ -9,18 +9,17 @@
         </template>
 
         <v-card-title v-if="value._links">
-            Limit # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
+            Send # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
         </v-card-title >
         <v-card-title v-else>
-            Limit
+            Send
         </v-card-title >        
 
         <v-card-text style="background-color: white;">
             <Number v-if="editMode" label="Userid" v-model="value.userid" :editMode="editMode" :inputUI="''"/>
-            <Number label="Beforehando" v-model="value.beforehando" :editMode="editMode" :inputUI="''"/>
             <Number label="Cardno" v-model="value.cardno" :editMode="editMode" :inputUI="''"/>
-            <Number label="Afterhando" v-model="value.afterhando" :editMode="editMode" :inputUI="''"/>
-            <Date label="Changeilja" v-model="value.changeilja" :editMode="editMode" :inputUI="''"/>
+            <String label="Address" v-model="value.address" :editMode="editMode" :inputUI="''"/>
+            <Date label="Balsongilja" v-model="value.balsongilja" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions style="background-color: white;">
@@ -39,7 +38,14 @@
                     text
                     @click="save"
                 >
-                    StartLimit
+                    StartSend
+                </v-btn>
+                <v-btn
+                    color="primary"
+                    text
+                    @click="save"
+                >
+                    CancelSend
                 </v-btn>
                 <v-btn
                     color="primary"
@@ -83,7 +89,7 @@
 
 
     export default {
-        name: 'LimitLimit',
+        name: 'SendSend',
         components:{
         },
         props: {
@@ -138,7 +144,7 @@
 
                     if(!this.offline) {
                         if(this.isNew) {
-                            temp = await axios.post(axios.fixUrl('/limits'), this.value)
+                            temp = await axios.post(axios.fixUrl('/sends'), this.value)
                         } else {
                             temp = await axios.put(axios.fixUrl(this.value._links.self.href), this.value)
                         }
