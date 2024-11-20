@@ -1,6 +1,7 @@
 package cardapply.domain;
 
 import cardapply.SendApplication;
+import cardapply.domain.SendCancelled;
 import cardapply.domain.SendStarted;
 import java.time.LocalDate;
 import java.util.Date;
@@ -30,6 +31,9 @@ public class Send {
     public void onPostPersist() {
         SendStarted sendStarted = new SendStarted(this);
         sendStarted.publishAfterCommit();
+
+        SendCancelled sendCancelled = new SendCancelled(this);
+        sendCancelled.publishAfterCommit();
     }
 
     public static SendRepository repository() {
