@@ -10,4 +10,5 @@ public class Send {
     private Long cardno;
     private String address;
     private Date balsongilja;
+    private Integer status;
 }

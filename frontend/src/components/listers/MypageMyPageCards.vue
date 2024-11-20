@@ -8,7 +8,7 @@
         >
             <v-row>
                 <v-list-item class="d-flex" style="background-color: white;">
-                    <h1 class="align-self-center ml-3">Send</h1>
+                    <h1 class="align-self-center ml-3">MyPage</h1>
                     <div class="secondary-text-color" style="margin-left:30px;"></div>
                 </v-list-item>
             </v-row>
@@ -22,7 +22,7 @@
                         hide-overlay
                         transition="dialog-bottom-transition"
                 >
-                    <SendSend :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
+                    <MypageMyPage :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
                             @add="append" v-if="tick"/>
 
                     <v-btn
@@ -61,7 +61,7 @@
                                 color="primary"
                                 style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
                             >
-                                Send 등록
+                                MyPage 등록
                             </v-btn>
                         </v-card-actions>
                     </v-card>
@@ -69,7 +69,7 @@
             </div>
         </v-col>
         <v-row>
-            <SendSend :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
+            <MypageMyPage :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
         </v-row>
     </div>
 </template>
@@ -77,12 +77,12 @@
 <script>
 
     const axios = require('axios').default;
-    import SendSend from './../SendSend.vue';
+    import MypageMyPage from './../MypageMyPage.vue';
 
     export default {
-        name: 'SendSendManager',
+        name: 'MypageMyPageManager',
         components: {
-            SendSend,
+            MypageMyPage,
         },
         props: {
             offline: Boolean
@@ -100,14 +100,12 @@
                 return;
             } 
 
-            var temp = await axios.get(axios.fixUrl('/sends'))
-            me.values = temp.data._embedded.sends;
+            var temp = await axios.get(axios.fixUrl('/myPages'))
+            me.values = temp.data._embedded.myPages;
             
             me.newValue = {
                 'userid': 0,
                 'cardno': 0,
-                'address': '',
-                'balsongilja': '2024-11-20',
                 'status': 0,
             }
         },

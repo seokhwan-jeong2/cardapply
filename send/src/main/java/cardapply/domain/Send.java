@@ -24,6 +24,8 @@ public class Send {
 
     private Date balsongilja;
 
+    private Integer status;
+
     @PostPersist
     public void onPostPersist() {
         SendStarted sendStarted = new SendStarted(this);

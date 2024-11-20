@@ -31,7 +31,7 @@
                         </v-fab-transition>
                     </template>
 
-                    <SendSend :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <MypageMyPage :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -50,12 +50,12 @@
 
 <script>
     const axios = require('axios').default;
-    import SendSend from './../SendSend.vue';
+    import MypageMyPage from './../MypageMyPage.vue';
 
     export default {
-        name: 'SendSendManager',
+        name: 'MypageMyPageManager',
         components: {
-            SendSend,
+            MypageMyPage,
         },
         props: {
             offline: Boolean,
@@ -68,11 +68,9 @@
                 [
                     { text: "userid", value: "userid" },
                     { text: "cardno", value: "cardno" },
-                    { text: "address", value: "address" },
-                    { text: "balsongilja", value: "balsongilja" },
                     { text: "status", value: "status" },
                 ],
-            send : [],
+            myPage : [],
             newValue: {},
             tick : true,
             openDialog : false,
@@ -83,15 +81,13 @@
                 return;
             }
 
-            var temp = await axios.get(axios.fixUrl('/sends'))
-            temp.data._embedded.sends.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
-            this.values = temp.data._embedded.sends;
+            var temp = await axios.get(axios.fixUrl('/mypages'))
+            temp.data._embedded.mypages.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            this.values = temp.data._embedded.mypages;
 
             this.newValue = {
                 'userid': 0,
                 'cardno': 0,
-                'address': '',
-                'balsongilja': '2024-11-20',
                 'status': 0,
             }
         },

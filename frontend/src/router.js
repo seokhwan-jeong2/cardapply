@@ -18,6 +18,7 @@ import CustomerCustomerManager from "./components/listers/CustomerCustomerCards"
 import CustomerCustomerDetail from "./components/listers/CustomerCustomerDetail"
 
 
+
 export default new Router({
     // mode: 'history',
     base: process.env.BASE_URL,
@@ -65,6 +66,7 @@ export default new Router({
                 name: 'CustomerCustomerDetail',
                 component: CustomerCustomerDetail
             },
+
 
 
 

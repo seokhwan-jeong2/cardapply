@@ -9,17 +9,15 @@
         </template>
 
         <v-card-title v-if="value._links">
-            Send # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
+            MyPage # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
         </v-card-title >
         <v-card-title v-else>
-            Send
+            MyPage
         </v-card-title >        
 
         <v-card-text style="background-color: white;">
             <Number v-if="editMode" label="Userid" v-model="value.userid" :editMode="editMode" :inputUI="''"/>
             <Number label="Cardno" v-model="value.cardno" :editMode="editMode" :inputUI="''"/>
-            <String label="Address" v-model="value.address" :editMode="editMode" :inputUI="''"/>
-            <Date label="Balsongilja" v-model="value.balsongilja" :editMode="editMode" :inputUI="''"/>
             <Number label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
@@ -39,14 +37,7 @@
                     text
                     @click="save"
                 >
-                    StartSend
-                </v-btn>
-                <v-btn
-                    color="primary"
-                    text
-                    @click="save"
-                >
-                    CancelSend
+                저장
                 </v-btn>
                 <v-btn
                     color="primary"
@@ -90,7 +81,7 @@
 
 
     export default {
-        name: 'SendSend',
+        name: 'MypageMyPage',
         components:{
         },
         props: {
@@ -145,7 +136,7 @@
 
                     if(!this.offline) {
                         if(this.isNew) {
-                            temp = await axios.post(axios.fixUrl('/sends'), this.value)
+                            temp = await axios.post(axios.fixUrl('/myPages'), this.value)
                         } else {
                             temp = await axios.put(axios.fixUrl(this.value._links.self.href), this.value)
                         }

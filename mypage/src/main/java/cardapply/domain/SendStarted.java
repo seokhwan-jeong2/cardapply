@@ -1,14 +1,11 @@
 package cardapply.domain;
 
-import cardapply.domain.*;
 import cardapply.infra.AbstractEvent;
 import java.time.LocalDate;
 import java.util.*;
-import lombok.*;
+import lombok.Data;
 
-//<<< DDD / Domain Event
 @Data
-@ToString
 public class SendStarted extends AbstractEvent {
 
     private Long userid;
@@ -16,13 +13,4 @@ public class SendStarted extends AbstractEvent {
     private String address;
     private Date balsongilja;
     private Integer status;
-
-    public SendStarted(Send aggregate) {
-        super(aggregate);
-    }
-
-    public SendStarted() {
-        super();
-    }
 }
-//>>> DDD / Domain Event

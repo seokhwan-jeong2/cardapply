@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1>Send</h1>
+    <h1>MyPage</h1>
         <v-row>
             <v-card
                 class="mx-auto"
@@ -26,7 +26,7 @@
                         color="primary"
                         style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
                     >
-                        Send 등록
+                        MyPage 등록
                     </v-btn>
                 </v-card-actions>
             </v-card>
@@ -43,15 +43,11 @@
                             
                             
                             
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Userid :  {{data.userid }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Cardno :  {{data.cardno }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Address :  {{data.address }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Balsongilja :  {{data.balsongilja }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
@@ -72,7 +68,7 @@
                         transition="dialog-bottom-transition"
                 >
 
-                    <SendSend :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <MypageMyPage :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -91,12 +87,12 @@
 
 <script>
     const axios = require('axios').default;
-    import SendSend from './../SendSend.vue';
+    import MypageMyPage from './../MypageMyPage.vue';
 
     export default {
-        name: 'SendSendManager',
+        name: 'MypageMyPageManager',
         components: {
-            SendSend,
+            MypageMyPage,
         },
         props: {
             offline: Boolean,
@@ -115,15 +111,13 @@
                 return;
             } 
 
-            var temp = await axios.get(axios.fixUrl('/sends'))
-            temp.data._embedded.sends.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
-            this.values = temp.data._embedded.sends;
+            var temp = await axios.get(axios.fixUrl('/mypages'))
+            temp.data._embedded.mypages.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            this.values = temp.data._embedded.mypages;
             
             this.newValue = {
                 'userid': 0,
                 'cardno': 0,
-                'address': '',
-                'balsongilja': '2024-11-20',
                 'status': 0,
             }
         },

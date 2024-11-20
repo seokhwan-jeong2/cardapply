@@ -1,7 +1,7 @@
 <template>
     <v-card outlined>
         <v-card-title>
-            Send # {{item._links.self.href.split("/")[item._links.self.href.split("/").length - 1]}}
+            MyPage # {{item._links.self.href.split("/")[item._links.self.href.split("/").length - 1]}}
         </v-card-title>
 
         <v-card-text>
@@ -10,12 +10,6 @@
             </div>
             <div>
                 <Number label="Cardno" v-model="item.cardno" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="Address" v-model="item.address" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <Date label="Balsongilja" v-model="item.balsongilja" :editMode="editMode" @change="change" />
             </div>
             <div>
                 <Number label="Status" v-model="item.status" :editMode="editMode" @change="change" />
@@ -66,7 +60,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'SendSendDetail',
+        name: 'MypageMyPageDetail',
         components:{},
         props: {
         },
@@ -77,7 +71,7 @@
         async created() {
             var me = this;
             var params = this.$route.params;
-            var temp = await axios.get(axios.fixUrl('/sends/' + params.id))
+            var temp = await axios.get(axios.fixUrl('/myPages/' + params.id))
             if(temp.data) {
                 me.item = temp.data
             }
