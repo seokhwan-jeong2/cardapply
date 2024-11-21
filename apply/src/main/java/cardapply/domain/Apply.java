@@ -40,5 +40,12 @@ public class Apply {
         );
         return applyRepository;
     }
+
+   @PreRemove
+    public void onPreRemove() {
+        ApplyCancelled applyCancelled = new ApplyCancelled(this);
+        applyCancelled.publishAfterCommit();
+    }
+
 }
 //>>> DDD / Aggregate Root
