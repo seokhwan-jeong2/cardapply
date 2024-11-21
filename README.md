@@ -44,7 +44,7 @@ mvn spring-boot:run
 ```
 - limit
 ```
- http :8088/limits userid="userid" beforehando="beforehando" cardno="cardno" afterhando="afterhando" changeilja="changeilja" 
+ http :8088/limits userid="userid" beforehando="beforehando" cardno="cardno" afterhando="afterhando" changeilja="changeilja" status="status" 
 ```
 - customer
 ```

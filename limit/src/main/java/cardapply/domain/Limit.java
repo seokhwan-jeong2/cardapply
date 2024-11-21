@@ -26,6 +26,8 @@ public class Limit {
 
     private Date changeilja;
 
+    private Integer status;
+
     @PostPersist
     public void onPostPersist() {
         Limited limited = new Limited(this);

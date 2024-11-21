@@ -71,6 +71,7 @@
                     { text: "cardno", value: "cardno" },
                     { text: "afterhando", value: "afterhando" },
                     { text: "changeilja", value: "changeilja" },
+                    { text: "status", value: "status" },
                 ],
             limit : [],
             newValue: {},
@@ -93,6 +94,7 @@
                 'cardno': 0,
                 'afterhando': 0,
                 'changeilja': '2024-11-21',
+                'status': 0,
             }
         },
         methods: {

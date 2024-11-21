@@ -16,6 +16,7 @@ public class Limited extends AbstractEvent {
     private Long cardno;
     private Double afterhando;
     private Date changeilja;
+    private Integer status;
 
     public Limited(Limit aggregate) {
         super(aggregate);

@@ -45,6 +45,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -53,6 +54,7 @@
                             [ Cardno :  {{data.cardno }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Afterhando :  {{data.afterhando }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Changeilja :  {{data.changeilja }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -125,6 +127,7 @@
                 'cardno': 0,
                 'afterhando': 0,
                 'changeilja': '2024-11-21',
+                'status': 0,
             }
         },
         methods: {

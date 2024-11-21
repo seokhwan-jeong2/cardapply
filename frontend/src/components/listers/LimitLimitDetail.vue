@@ -20,6 +20,9 @@
             <div>
                 <Date label="Changeilja" v-model="item.changeilja" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <Number label="Status" v-model="item.status" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

@@ -11,4 +11,5 @@ public class Limit {
     private Long cardno;
     private Double afterhando;
     private Date changeilja;
+    private Integer status;
 }

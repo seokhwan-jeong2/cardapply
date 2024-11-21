@@ -21,6 +21,7 @@
             <Number label="Cardno" v-model="value.cardno" :editMode="editMode" :inputUI="''"/>
             <Number label="Afterhando" v-model="value.afterhando" :editMode="editMode" :inputUI="''"/>
             <Date label="Changeilja" v-model="value.changeilja" :editMode="editMode" :inputUI="''"/>
+            <Number label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions style="background-color: white;">
