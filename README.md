@@ -24,6 +24,7 @@ See the README.md files inside the each microservices directory:
 - send
 - limit
 - customer
+- mypage
 
 
 ## Run API Gateway (Spring Gateway)
@@ -39,7 +40,7 @@ mvn spring-boot:run
 ```
 - send
 ```
- http :8088/ 
+ http :8088/sends userid="userid" cardno="cardno" address="address" balsongilja="balsongilja" status="status" 
 ```
 - limit
 ```
@@ -48,6 +49,10 @@ mvn spring-boot:run
 - customer
 ```
  http :8088/customers userid="userid" jusaupno="jusaupno" customergubun="customergubun" address="address" 
+```
+- mypage
+```
+ http :8088/myPages userid="userid" cardno="cardno" status="status" 
 ```
 
 

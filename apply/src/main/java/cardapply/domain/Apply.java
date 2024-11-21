@@ -2,6 +2,7 @@ package cardapply.domain;
 
 import cardapply.ApplyApplication;
 import cardapply.domain.Applied;
+import cardapply.domain.ApplyCancelled;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -32,6 +33,9 @@ public class Apply {
     public void onPostPersist() {
         Applied applied = new Applied(this);
         applied.publishAfterCommit();
+
+        ApplyCancelled applyCancelled = new ApplyCancelled(this);
+        applyCancelled.publishAfterCommit();
     }
 
     public static ApplyRepository repository() {

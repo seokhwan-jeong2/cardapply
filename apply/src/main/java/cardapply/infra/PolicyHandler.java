@@ -22,5 +22,33 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Applied'"
+    )
+    public void wheneverApplied_ApplySaga(@Payload Applied applied) {
+        Applied event = applied;
+        System.out.println(
+            "\n\n##### listener ApplySaga : " + applied + "\n\n"
+        );
+        // Sample Logic //
+
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ApplyCancelled'"
+    )
+    public void wheneverApplyCancelled_ApplySaga(
+        @Payload ApplyCancelled applyCancelled
+    ) {
+        ApplyCancelled event = applyCancelled;
+        System.out.println(
+            "\n\n##### listener ApplySaga : " + applyCancelled + "\n\n"
+        );
+        // Sample Logic //
+
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

@@ -1,6 +1,7 @@
 package cardapply.domain;
 
 import cardapply.LimitApplication;
+import cardapply.domain.Limited;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -25,40 +26,17 @@ public class Limit {
 
     private Date changeilja;
 
+    @PostPersist
+    public void onPostPersist() {
+        Limited limited = new Limited(this);
+        limited.publishAfterCommit();
+    }
+
     public static LimitRepository repository() {
         LimitRepository limitRepository = LimitApplication.applicationContext.getBean(
             LimitRepository.class
         );
         return limitRepository;
     }
-
-    //<<< Clean Arch / Port Method
-    public static void startLimit(Applied applied) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Limit limit = new Limit();
-        repository().save(limit);
-
-        Limited limited = new Limited(limit);
-        limited.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(applied.get???()).ifPresent(limit->{
-            
-            limit // do something
-            repository().save(limit);
-
-            Limited limited = new Limited(limit);
-            limited.publishAfterCommit();
-
-         });
-        */
-
-    }
-    //>>> Clean Arch / Port Method
-
 }
 //>>> DDD / Aggregate Root

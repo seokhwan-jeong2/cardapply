@@ -39,7 +39,7 @@
                     text
                     @click="save"
                 >
-                저장
+                    StartLimit
                 </v-btn>
                 <v-btn
                     color="primary"

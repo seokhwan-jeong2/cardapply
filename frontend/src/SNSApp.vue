@@ -48,13 +48,13 @@
 
                     <v-list-item
                         class="px-2"
-                        key=""
-                        to="//"
+                        key="sends"
+                        to="/sends/sends"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        
+                        Send
                     </v-list-item>
 
 
@@ -79,6 +79,18 @@
                         style="font-weight:700;"
                     >
                         Customer
+                    </v-list-item>
+
+
+                    <v-list-item
+                        class="px-2"
+                        key="myPages"
+                        to="/mypages/myPages"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        MyPage
                     </v-list-item>
 
 
@@ -168,10 +180,10 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: '', 
+                title: 'Send', 
                 description: '', 
-                key: '', 
-                route: '//',
+                key: 'sends', 
+                route: '/sends/sends',
                 ImageUrl: '',
             },
             { 
@@ -186,6 +198,13 @@ export default {
                 description: '', 
                 key: 'customers', 
                 route: '/customers/customers',
+                ImageUrl: '',
+            },
+            { 
+                title: 'MyPage', 
+                description: '', 
+                key: 'myPages', 
+                route: '/mypages/myPages',
                 ImageUrl: '',
             },
             

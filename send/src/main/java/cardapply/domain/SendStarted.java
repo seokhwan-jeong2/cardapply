@@ -15,6 +15,7 @@ public class SendStarted extends AbstractEvent {
     private Long cardno;
     private String address;
     private Date balsongilja;
+    private Integer status;
 
     public SendStarted(Send aggregate) {
         super(aggregate);

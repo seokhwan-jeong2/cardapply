@@ -16,15 +16,19 @@ spring:
         - id: send
           uri: http://localhost:8083
           predicates:
-            - Path=/undefined/**, 
+            - Path=/sends/**, 
         - id: limit
-          uri: http://localhost:0
+          uri: http://localhost:8084
           predicates:
             - Path=/limits/**, 
         - id: customer
-          uri: http://localhost:0
+          uri: http://localhost:8085
           predicates:
             - Path=/customers/**, 
+        - id: mypage
+          uri: http://localhost:8086
+          predicates:
+            - Path=/myPages/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -56,7 +60,7 @@ spring:
         - id: send
           uri: http://send:8080
           predicates:
-            - Path=/undefined/**, 
+            - Path=/sends/**, 
         - id: limit
           uri: http://limit:8080
           predicates:
@@ -65,6 +69,10 @@ spring:
           uri: http://customer:8080
           predicates:
             - Path=/customers/**, 
+        - id: mypage
+          uri: http://mypage:8080
+          predicates:
+            - Path=/myPages/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:
