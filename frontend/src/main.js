@@ -53,6 +53,7 @@ pluralCaseList.push( {plural: "limits/limits", pascal: "LimitLimit"} )
 
 pluralCaseList.push( {plural: "customers/customers", pascal: "CustomerCustomer"} )
 
+pluralCaseList.push( {plural: "mypages/myPages", pascal: "MypageMyPage"} )
 
 
 Vue.prototype.$ManagerLists.forEach(function(item, idx) {

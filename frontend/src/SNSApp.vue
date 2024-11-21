@@ -82,6 +82,17 @@
                     </v-list-item>
 
 
+                    <v-list-item
+                        class="px-2"
+                        key="myPages"
+                        to="/mypages/myPages"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        MyPage
+                    </v-list-item>
+
 
                 </v-list>
             </v-navigation-drawer>
@@ -187,6 +198,13 @@ export default {
                 description: '', 
                 key: 'customers', 
                 route: '/customers/customers',
+                ImageUrl: '',
+            },
+            { 
+                title: 'MyPage', 
+                description: '', 
+                key: 'myPages', 
+                route: '/mypages/myPages',
                 ImageUrl: '',
             },
             

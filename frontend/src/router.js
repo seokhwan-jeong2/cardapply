@@ -17,6 +17,8 @@ import LimitLimitDetail from "./components/listers/LimitLimitDetail"
 import CustomerCustomerManager from "./components/listers/CustomerCustomerCards"
 import CustomerCustomerDetail from "./components/listers/CustomerCustomerDetail"
 
+import MypageMyPageManager from "./components/listers/MypageMyPageCards"
+import MypageMyPageDetail from "./components/listers/MypageMyPageDetail"
 
 
 export default new Router({
@@ -67,6 +69,16 @@ export default new Router({
                 component: CustomerCustomerDetail
             },
 
+            {
+                path: '/mypages/myPages',
+                name: 'MypageMyPageManager',
+                component: MypageMyPageManager
+            },
+            {
+                path: '/mypages/myPages/:id',
+                name: 'MypageMyPageDetail',
+                component: MypageMyPageDetail
+            },
 
 
 

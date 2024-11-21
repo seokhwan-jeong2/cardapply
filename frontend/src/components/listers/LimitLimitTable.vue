@@ -92,7 +92,7 @@
                 'beforehando': 0,
                 'cardno': 0,
                 'afterhando': 0,
-                'changeilja': '2024-11-20',
+                'changeilja': '2024-11-21',
             }
         },
         methods: {

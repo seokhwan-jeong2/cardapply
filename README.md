@@ -52,6 +52,7 @@ mvn spring-boot:run
 ```
 - mypage
 ```
+ http :8088/myPages userid="userid" cardno="cardno" status="status" 
 ```
 
 
