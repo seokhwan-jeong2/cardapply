@@ -126,7 +126,7 @@
                 'beforehando': 0,
                 'cardno': 0,
                 'afterhando': 0,
-                'changeilja': '2024-11-21',
+                'changeilja': '2024-11-22',
                 'status': 0,
             }
         },

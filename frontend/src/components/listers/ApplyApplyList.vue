@@ -123,7 +123,7 @@
             
             this.newValue = {
                 'userid': 0,
-                'sinilja': '2024-11-21',
+                'sinilja': '2024-11-22',
                 'cardno': 0,
                 'cardpwd': 0,
                 'jusaupno': 0,
